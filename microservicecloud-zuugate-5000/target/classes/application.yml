@@ -1,0 +1,20 @@
+server:
+  port: 5000
+  
+spring:
+  application:
+    name: microservicecloud-zuugate
+
+
+eureka:
+  instance:
+    instance-id: gateway5000.com
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7000.com:7000/eureka,http://eureka7001.com:7001/eureka
+      
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**

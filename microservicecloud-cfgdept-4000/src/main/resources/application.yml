@@ -1,0 +1,11 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: micrpservicecloud-cfgdept
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/luoenen/MicroServiceCloud

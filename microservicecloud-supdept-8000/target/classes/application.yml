@@ -1,0 +1,27 @@
+server:
+  port: 8000
+  
+mybatis:  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.atguigu.springcloud.entities
+  mapper-locations:  - classpath:mybatis/mapper/**/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7000.com:7000/eureka,http://eureka7001.com:7001/eureka
+spring:  application:    name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver    url: jdbc:mysql://localhost:3306/microservicecloud
+    username: root
+    password: luo
+    dbcp2:      min-idle: 5
+      max-wait-millis: 200
+      initial-size: 5
+      max-total: 5
+info:
+  app.name: microservicecloud-supdept
+  company.name: www.tencent.com
+  build.groupId: com.atguigu.springcloud
+  build.artifactId: microservicecloud-supdept-8000
+  build.version: 0.0.1-SNAPSHOT
